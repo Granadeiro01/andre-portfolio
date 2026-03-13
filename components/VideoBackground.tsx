@@ -20,9 +20,9 @@ export function VideoBackground() {
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden -z-10">
+    <div className="absolute inset-0 overflow-hidden">
       {/* Image Carousel Background */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0">
         {BACKGROUND_IMAGES.map((image, index) => (
           <div
             key={index}
