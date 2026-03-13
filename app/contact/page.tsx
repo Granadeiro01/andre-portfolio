@@ -6,6 +6,7 @@ import { Section } from "@/components/Shared/Section";
 import { Button } from "@/components/Shared/Button";
 import { useState } from "react";
 import { getQuoteOfTheDay } from "@/data/quotes";
+import { SlideUp, FadeIn } from "@/components/Animations";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -40,12 +41,14 @@ export default function ContactPage() {
       <Navigation />
       <Section padding="xl">
         <Container maxWidth="md">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-2">Get In Touch</h1>
-            <p className="text-gray-400">
-              I&apos;m always interested in new opportunities and collaborations
-            </p>
-          </div>
+          <SlideUp>
+            <div className="text-center mb-12">
+              <h1 className="text-4xl font-bold mb-2">Get In Touch</h1>
+              <p className="text-gray-400">
+                I&apos;m always interested in new opportunities and collaborations
+              </p>
+            </div>
+          </SlideUp>
 
           {submitted ? (
             <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-6 text-center mb-8">
@@ -114,11 +117,13 @@ export default function ContactPage() {
           )}
 
           {/* Quote of the day */}
-          <div className="border border-gray-700/50 rounded-lg p-6 bg-gray-800/20">
-            <p className="text-gray-400 text-sm mb-2">Quote of the Day</p>
-            <p className="text-white italic mb-2">&quot;{quote.text}&quot;</p>
-            <p className="text-blue-400 text-sm">— {quote.author}</p>
-          </div>
+          <FadeIn>
+            <div className="border border-gray-700/50 rounded-lg p-6 bg-gray-800/20">
+              <p className="text-gray-400 text-sm mb-2">Quote of the Day</p>
+              <p className="text-white italic mb-2">&quot;{quote.text}&quot;</p>
+              <p className="text-blue-400 text-sm">— {quote.author}</p>
+            </div>
+          </FadeIn>
         </Container>
       </Section>
     </>
