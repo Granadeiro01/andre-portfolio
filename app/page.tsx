@@ -3,6 +3,12 @@ import { Navigation } from "@/components/Navigation";
 import { Container } from "@/components/Shared/Container";
 import { Button } from "@/components/Shared/Button";
 import { Section } from "@/components/Shared/Section";
+import {
+  SlideUp,
+  StaggerContainer,
+  AnimatedChild,
+  HoverScale,
+} from "@/components/Animations";
 
 export default function Home() {
   return (
@@ -20,44 +26,70 @@ export default function Home() {
         </div>
 
         <Container maxWidth="2xl">
-          <div className="text-center space-y-6 sm:space-y-8">
-            {/* Main heading */}
-            <div className="space-y-4">
-              <h1 className="text-5xl sm:text-7xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-                Hi, I&apos;m Andre
-              </h1>
+          <SlideUp>
+            <div className="text-center space-y-6 sm:space-y-8">
+              {/* Main heading */}
+              <div className="space-y-4">
+                <h1 className="text-5xl sm:text-7xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+                  Hi, I&apos;m Andre
+                </h1>
 
-              {/* Subtitle with typing effect */}
-              <div className="flex flex-col gap-2 text-lg sm:text-2xl text-gray-400">
-                <p>ML Engineer • Founder • Elite Athlete</p>
-                <p className="text-blue-400">Building the future through data & technology</p>
+                {/* Subtitle */}
+                <div className="flex flex-col gap-2 text-lg sm:text-2xl text-gray-400">
+                  <p>ML Engineer • Founder • Elite Athlete</p>
+                  <p className="text-blue-400">Building the future through data & technology</p>
+                </div>
               </div>
-            </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-              <Link href="/projects">
-                <Button size="lg">View My Work</Button>
-              </Link>
-              <Link href="/contact">
-                <Button variant="outline" size="lg">Get In Touch</Button>
-              </Link>
-            </div>
+              {/* CTA Buttons */}
+              <StaggerContainer delay={0.1}>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                  <AnimatedChild>
+                    <Link href="/projects">
+                      <HoverScale scale={1.05}>
+                        <Button size="lg">View My Work</Button>
+                      </HoverScale>
+                    </Link>
+                  </AnimatedChild>
+                  <AnimatedChild>
+                    <Link href="/contact">
+                      <HoverScale scale={1.05}>
+                        <Button variant="outline" size="lg">Get In Touch</Button>
+                      </HoverScale>
+                    </Link>
+                  </AnimatedChild>
+                </div>
+              </StaggerContainer>
 
-            {/* Quick stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-12 text-center">
-              <div>
-                <p className="text-2xl sm:text-3xl font-bold text-blue-400">15+</p>
-                <p className="text-sm sm:text-base text-gray-500">ML Projects</p>
-              </div>
-              <div>
-                <p className="text-2xl sm:text-3xl font-bold text-blue-400">€5M</p>
-                <p className="text-sm sm:text-base text-gray-500">Portfolio Value</p>
-              </div>
-              <div>
-                <p className="text-2xl sm:text-3xl font-bold text-blue-400">2021</p>
-                <p className="text-sm sm:text-base text-gray-500">Olympics</p>
-              </div>
+              {/* Quick stats */}
+              <StaggerContainer delay={0.15} className="pt-12">
+                <div className="grid grid-cols-3 gap-4 sm:gap-8 text-center">
+                  <AnimatedChild>
+                    <HoverScale scale={1.05}>
+                      <div>
+                        <p className="text-2xl sm:text-3xl font-bold text-blue-400">15+</p>
+                        <p className="text-sm sm:text-base text-gray-500">ML Projects</p>
+                      </div>
+                    </HoverScale>
+                  </AnimatedChild>
+                  <AnimatedChild>
+                    <HoverScale scale={1.05}>
+                      <div>
+                        <p className="text-2xl sm:text-3xl font-bold text-blue-400">€5M</p>
+                        <p className="text-sm sm:text-base text-gray-500">Portfolio Value</p>
+                      </div>
+                    </HoverScale>
+                  </AnimatedChild>
+                  <AnimatedChild>
+                    <HoverScale scale={1.05}>
+                      <div>
+                        <p className="text-2xl sm:text-3xl font-bold text-blue-400">2021</p>
+                        <p className="text-sm sm:text-base text-gray-500">Olympics</p>
+                      </div>
+                    </HoverScale>
+                  </AnimatedChild>
+                </div>
+              </StaggerContainer>
             </div>
 
             {/* Scroll indicator */}
@@ -78,7 +110,7 @@ export default function Home() {
                 </svg>
               </div>
             </div>
-          </div>
+          </SlideUp>
         </Container>
       </Section>
 

@@ -4,6 +4,7 @@ import { Section } from "@/components/Shared/Section";
 import { Badge } from "@/components/Shared/Badge";
 import { experiences } from "@/data/experience";
 import { calculateDuration } from "@/lib/utils";
+import { SlideUp, StaggerContainer, AnimatedChild } from "@/components/Animations";
 
 export const metadata = {
   title: "Experience | Andre Granadeiro",
@@ -16,12 +17,15 @@ export default function ExperiencePage() {
       <Navigation />
       <Section padding="xl">
         <Container>
-          <h1 className="text-4xl font-bold mb-2">Experience</h1>
-          <p className="text-gray-400 mb-12">My professional journey</p>
+          <SlideUp>
+            <h1 className="text-4xl font-bold mb-2">Experience</h1>
+            <p className="text-gray-400 mb-12">My professional journey</p>
+          </SlideUp>
 
-          <div className="space-y-8 max-w-4xl">
+          <StaggerContainer delay={0.1} className="space-y-8 max-w-4xl">
             {experiences.map((exp) => (
-              <div key={exp.id} className="border border-gray-700/50 rounded-lg p-6 hover:bg-gray-800/30 transition">
+              <AnimatedChild key={exp.id}>
+                <div className="border border-gray-700/50 rounded-lg p-6 hover:bg-gray-800/30 transition hover:scale-[1.02] duration-300">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
                   <div>
                     <h3 className="text-xl font-bold">{exp.title}</h3>
@@ -52,8 +56,9 @@ export default function ExperiencePage() {
                   ))}
                 </div>
               </div>
+              </AnimatedChild>
             ))}
-          </div>
+          </StaggerContainer>
         </Container>
       </Section>
     </>
