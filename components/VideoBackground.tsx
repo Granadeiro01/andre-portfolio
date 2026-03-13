@@ -3,10 +3,7 @@
 import { useState, useEffect } from "react";
 
 const BACKGROUND_IMAGES = [
-  "/images/bg-running.jpg",
-  "/images/bg-sailing-1.jpg",
-  "/images/bg-sailing-2.jpg",
-  "/images/bg-sailing-3.jpg",
+  "/images/bg-running.png",
 ];
 
 const IMAGE_INTERVAL = 10000; // 10 seconds
