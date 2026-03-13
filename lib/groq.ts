@@ -90,7 +90,7 @@ export async function sendMessage(
 
     // Call Groq API
     const response = await groq.chat.completions.create({
-      model: "mixtral-8x7b-32768", // Or use "llama-2-70b-chat" for different model
+      model: "llama-3.3-70b-versatile", // Current stable Groq model
       messages: messages as any,
       temperature: 0.7,
       max_tokens: 500,
@@ -100,17 +100,22 @@ export async function sendMessage(
     // Extract response text
     const responseText = response.choices[0]?.message?.content || "";
 
+    console.log("Groq raw response:", responseText);
+
     // Parse JSON response
     try {
       const chatResponse = JSON.parse(responseText) as ChatResponse;
 
       // Validate required fields
       if (!chatResponse.intent || !chatResponse.response) {
-        throw new Error("Invalid response format");
+        throw new Error("Invalid response format - missing required fields");
       }
 
       return chatResponse;
-    } catch {
+    } catch (parseError) {
+      console.error("JSON parse error:", parseError);
+      console.error("Raw text was:", responseText);
+
       // Fallback: create response from raw text
       return {
         intent: "general",
