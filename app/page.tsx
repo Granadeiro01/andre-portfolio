@@ -4,6 +4,7 @@ import { Container } from "@/components/Shared/Container";
 import { Button } from "@/components/Shared/Button";
 import { Section } from "@/components/Shared/Section";
 import { HomeChat } from "@/components/HomeChat";
+import { VideoBackground } from "@/components/VideoBackground";
 import {
   SlideUp,
   StaggerContainer,
@@ -18,13 +19,8 @@ export default function Home() {
 
       {/* Hero Section with Chat */}
       <Section padding="xl" background="transparent" className="min-h-screen flex items-center">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden -z-10">
-          {/* Geometric shapes */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-3xl blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/5 rounded-3xl blur-3xl animate-pulse-slow" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500/5 rounded-3xl blur-3xl animate-pulse-slow" />
-        </div>
+        {/* Video Background */}
+        <VideoBackground />
 
         <Container maxWidth="2xl">
           <div className="space-y-12">
