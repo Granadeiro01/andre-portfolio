@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { getAbsoluteUrl } from "@/lib/utils";
-import { ChatAgent } from "@/components/ChatAgent";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
@@ -94,9 +93,6 @@ export default function RootLayout({
 
         {/* Background elements (optional animated elements) */}
         <div className="fixed inset-0 -z-10 bg-gradient-dark pointer-events-none" />
-
-        {/* Chat Agent */}
-        <ChatAgent />
 
         {/* Scroll indicator (optional) */}
         <div className="fixed bottom-10 right-10 z-40 hidden md:block" id="scroll-indicator" />
