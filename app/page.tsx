@@ -18,12 +18,14 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section with Chat */}
-      <Section padding="xl" background="transparent" className="min-h-screen flex items-center">
+      <section className="relative min-h-screen flex items-center overflow-hidden py-20 sm:py-32">
         {/* Video Background */}
         <VideoBackground />
 
-        <Container maxWidth="2xl">
-          <div className="space-y-12">
+        {/* Content */}
+        <div className="relative z-10 w-full">
+          <Container maxWidth="2xl">
+            <div className="space-y-12">
             {/* Top Section - Introduction */}
             <SlideUp>
               <div className="text-center space-y-6">
@@ -101,9 +103,10 @@ export default function Home() {
                 </StaggerContainer>
               </div>
             </SlideUp>
-          </div>
-        </Container>
-      </Section>
+            </div>
+          </Container>
+        </div>
+      </section>
 
       {/* Featured Section Preview */}
       <Section padding="lg" background="dark" id="featured">
