@@ -2,10 +2,11 @@ import { Navigation } from "@/components/Navigation";
 import { Container } from "@/components/Shared/Container";
 import { Section } from "@/components/Shared/Section";
 import { GitHubCard } from "@/components/stats/GitHubCard";
+import { StravaCard } from "@/components/stats/StravaCard";
 
 export const metadata = {
   title: "Statistics | Andre Granadeiro",
-  description: "GitHub contributions and performance analytics",
+  description: "GitHub contributions, running statistics, and performance analytics",
 };
 
 export default function StatsPage() {
@@ -30,11 +31,10 @@ export default function StatsPage() {
               <GitHubCard username="Granadeiro01" months={12} />
             </div>
 
-            {/* Future: Strava Stats */}
-            <div className="p-6 bg-gray-800/30 border border-gray-700/50 rounded-lg text-center">
-              <p className="text-gray-400">
-                🏃 Strava running statistics coming soon...
-              </p>
+            {/* Strava Stats */}
+            <div>
+              <h2 className="text-2xl font-bold mb-6 text-white">Running Activity</h2>
+              <StravaCard />
             </div>
           </div>
         </Container>
