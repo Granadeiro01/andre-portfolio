@@ -47,8 +47,8 @@ function generateMockGitHubData(
       name: "Andre Granadeiro",
       login: username,
       bio: "ML Engineer • Founder • Elite Athlete",
-      followers: { totalCount: 42 },
-      following: { totalCount: 15 },
+      followers: 42,
+      following: 15,
       contributionsCollection: {
         contributionCalendar: {
           totalContributions: weeks.reduce(

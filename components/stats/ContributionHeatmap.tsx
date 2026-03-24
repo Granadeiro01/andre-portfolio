@@ -71,7 +71,7 @@ export const ContributionHeatmap = ({
         className="font-xs text-gray-400"
       >
         {/* Day labels (Sun, Mon, Tue, Wed, Thu, Fri, Sat) */}
-        {["Sun", "Mon", "Wed", "Fri"].map((day, index) => (
+        {["Sun", "Mon", "Wed", "Fri"].map((day) => (
           <text
             key={`day-${day}`}
             x={-8}
