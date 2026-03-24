@@ -115,6 +115,23 @@ export const navigationStructure: NavigationItem[] = [
       "philosophy",
     ],
   },
+  {
+    id: "stats",
+    title: "Stats",
+    path: "/stats",
+    description: "GitHub contributions and performance analytics",
+    keywords: [
+      "stats",
+      "statistics",
+      "analytics",
+      "github",
+      "contributions",
+      "performance",
+      "metrics",
+      "strava",
+      "running",
+    ],
+  },
 ];
 
 export const getNavigationItem = (id: string): NavigationItem | undefined => {
